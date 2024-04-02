@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class company extends Model
 {
-    use HasFactory;
+    public function getList() {
+        // companiesテーブルからデータを取得
+        $companies = DB::table('companies')->get();
+
+        return $companies;
+    }
 }
