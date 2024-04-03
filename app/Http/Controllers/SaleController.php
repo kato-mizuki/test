@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class SaleController extends Controller
 {
     public function sale() {
-        return view('sale');
+        return view('edit');
     }
 }

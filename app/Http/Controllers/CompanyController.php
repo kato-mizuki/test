@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller
 {
     public function company() {
-        return view('company');
+        return view('show');
     }
 }

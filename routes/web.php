@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/product', [App\Http\Controllers\ProductController::class, 'product'])->name('product');
-Route::get('/sale', [App\Http\Controllers\SaleController::class, 'sale'])->name('sale');
-Route::get('/company', [App\Http\Controllers\CompanyController::class, 'company'])->name('company');
+Route::get('/index', [App\Http\Controllers\ProductController::class, 'product'])->name('product');
+Route::get('/edit', [App\Http\Controllers\SaleController::class, 'sale'])->name('sale');
+Route::get('/show', [App\Http\Controllers\CompanyController::class, 'company'])->name('company');
