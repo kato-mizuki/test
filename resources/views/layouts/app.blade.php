@@ -18,14 +18,11 @@
     </script>
     <script src="{{ asset('js/search.js') }}" defer></script>
     <script src="{{ asset('js/delete.js') }}" defer></script>
-
+    <script type="text/javascript" src="C:\Users\mk114\OneDrive\デスクトップ\lesson\jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/cytech.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

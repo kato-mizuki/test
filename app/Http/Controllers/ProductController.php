@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Support\Facades\Validator; //追加
 
 class ProductController extends Controller
