@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -25,7 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/list';
 
     /**
      * Create a new controller instance.
@@ -36,4 +38,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    //省略
+
+
+    public function redirectPath()
+{
+    return '/list';
+    //例）return 'costs/index';
+}
+
 }

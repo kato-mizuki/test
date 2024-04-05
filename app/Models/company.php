@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
-class company extends Model
+class Company extends Model
 {
-    public function getList() {
-        // companiesテーブルからデータを取得
-        $companies = DB::table('companies')->get();
+    public function products() {
+        return $this->hasMany('App\Models\Product');
+    }
+
+    public function getAllCompanies() {
+
+        $companies = $this->all();
 
         return $companies;
     }

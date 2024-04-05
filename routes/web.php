@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/', 'LoginController@')->name('list');
+
+Route::get('/list', 'ProductController@index')->name('list');
+
+Route::get('/search', 'ProductController@search')->name('search');
+
+Route::get('/create', 'ProductController@create')->name('create');
+
+Route::post('/list', 'ProductController@store')->name('store');
+
+Route::get('/list/{product}', 'ProductController@show')->name('show');
+
+Route::get('/edit/{product}', 'ProductController@edit')->name('edit');
+
+Route::put('/list/{product}', 'ProductController@update')->name('update');
+
+// Route::delete('/list/{product}', 'ProductController@destroy')->name('destroy');
+
+Route::post('/delete', 'ProductController@destroy')->name('destroy');
+
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'Home'])->name('home');
-Route::get('/index', [App\Http\Controllers\ProductController::class, 'product'])->name('product');
-Route::get('/edit', [App\Http\Controllers\SaleController::class, 'sale'])->name('sale');
-Route::get('/show', [App\Http\Controllers\CompanyController::class, 'company'])->name('company');
+//Route::get('/home', 'HomeController@index')->name('home');
