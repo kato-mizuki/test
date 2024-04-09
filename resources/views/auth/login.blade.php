@@ -3,56 +3,75 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('ユーザーログイン画面') }}</div>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>
+                    {{ __('ユーザーログイン画面') }}
+                    </th>
+                </tr>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                       
-                        <div class="form-group row">
-                            <div class="col-md-6">
+                            
+                            <div class="form-group row">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="パスワード">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </input>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-6">
+                        </form>
+                    </td>
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <div class="form-group row">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="アドレス">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </input>
                             </div>
-                        </div>
-
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <div class="form-group row mb-0">
+                                <div style="margin-top:20px">
+                                    <button type="submit" class="btn btn-warning">
+                                        <a href="{{ route('register') }}" >
+                                            {{__('新規登録')}}
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button class="btn btn-primary" type="submit" >
-                                    {{ __('ログイン') }}
+                            <div style="margin-top:20px">
+                                <button type="submit" class="btn btn-info">
+                                        {{ __('ログイン') }}
                                 </button>
-
-                            <div class="col-md-8 offset-md-4" style="margin-top:20px">
-                               <button class="btn btn-secondary" type="submit" >
-                                 <a href="{{ route('register') }}" class="btn btn-secondary">
-                                     {{__('新規登録')}}
-                                 </a>
-                               </button>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                            </div>
+                        </td>
+
+                    </tr>
+            </tbody>
+        </table> 
     </div>
 </div>
-@endsection
+@endsection 
