@@ -3,14 +3,14 @@
 @section('content')
 
 <div class="container">
-    <h2>新しい商品を追加</h2>
+    <h1>商品新規登録画面</h1>
 
 
  <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
-        <label for="product-name">商品名</label>
+        <label for="product-name">商品名*</label>
         <input type="text" name="name" id="product-name" class="form-control">
         @if ($errors->has('name'))
           <p class="errors">{{ $errors->first('name') }}</p>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group">
-        <label for="product-company">メーカー</label>
+        <label for="product-company">メーカー*</label>
         <select name="company_id">
             @foreach ($companies as $company)
             <option value="{{ $company->id }}">{{ $company->name }}</option>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-group">
-        <label for="product-price">価格</label>
+        <label for="product-price">価格*</label>
         <input type="number" name="price" id="price" class="form-control">
         @if ($errors->has('price'))
           <p class="errors">{{ $errors->first('price') }}</p>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="form-group">
-        <label for="product-stock">在庫数</label>
+        <label for="product-stock">在庫数*</label>
         <input type="number" name="stock" id="stock" class="form-control">
         @if ($errors->has('stock'))
           <p class="errors">{{ $errors->first('stock') }}</p>

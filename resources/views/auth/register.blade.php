@@ -29,7 +29,7 @@
                                             </span>
                                         @enderror
                                 </div>  
-                            </form>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -58,6 +58,7 @@
                                     {{ __('新規登録') }}
                                 </button>
                             </div>
+                            </form>
                         </td>
                         <td>
                             <div style="margin-top:20px">

@@ -10,7 +10,6 @@
                     {{ __('ユーザーログイン画面') }}
                     </th>
                 </tr>
-                <tr></tr>
             </thead>
             <tbody>
                 <tr>
@@ -29,7 +28,7 @@
                                     @enderror
                                 </input>
                             </div>
-                        </form>
+                        
                     </td>
                     <tr></tr>
                     <tr>
@@ -60,13 +59,14 @@
                             </div>
                         </td>
                         <td>
-                        <div class="form-group row mb-0">
-                            <div style="margin-top:20px">
-                                <button type="submit" class="btn btn-info">
-                                        {{ __('ログイン') }}
-                                </button>
+                            <div class="form-group row mb-0">
+                                <div style="margin-top:20px">
+                                    <button type="submit" class="btn btn-info">
+                                            {{ __('ログイン') }}
+                                    </button>
+                                </div>
                             </div>
-                            </div>
+                            </form>
                         </td>
 
                     </tr>
