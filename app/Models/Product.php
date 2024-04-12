@@ -122,7 +122,16 @@ class Product extends Model
         $product->save();
 
         return $product;
-    }
+    } 
+    public function create (Request $request){
+            $validated = $request->validate([
+                  'name' => ['required'],
+                  'company' => ['required'],
+                  'price' => ['required'],
+                  'stock' => ['required'],
+              ]);
+          
+          }
 
     public function updateProduct($data) {
 
