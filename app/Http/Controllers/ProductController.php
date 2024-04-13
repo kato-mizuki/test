@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Kyslik\ColumnSortable\Sortable;
+use App\Models\Sale;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator; //追加
 
 class ProductController extends Controller
@@ -52,9 +54,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //$companies = Company::all();
         $companies = (new Company())->getAllCompanies();
-
         return view('products.create', compact('companies'));
     }
 
@@ -126,7 +126,7 @@ class ProductController extends Controller
               'price' => $request->input('price'),
               'stock' => $request->input('stock'),
               'comment' => $request->input('comment'),
-              'company_id' => $request->input('company_id'),
+              'company' => $request->input('company'),
               'image_path' => $request->file('image_path')
             ];
 

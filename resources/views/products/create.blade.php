@@ -8,22 +8,28 @@
     
       </br></br>
     <table>
-      <form action="{{ route('create') }}" method="get" enctype="multipart/form-data">
+    <form action="{{ route('store')}}" method="post" enctype="multipart/form-data">
         @csrf
         
         <thead></tahead>
         <tbody>
-          <form action="{{ route('store')}}" method="post" enctype="multipart/form-data">
+          
             <tr>
               <td>
-                <div class="form-group">
-                  <label for="product-name">商品名</label>
+              <div class="form-group-sm clearfix">
+                  <label for="formGroupExampleInput2" class="required">商品名</label>
+                  <div class="product-info width-control">
               </td>
               <td>
-                <input type="text" name="name" id="product-name" class="form-control">
-                  @if ($errors->has('name'))
-                    p class="errors">{{ $errors->first('name') }}</p>
-                  @endif 
+                <input type="text" name="product_name" class="content-half-width form-control-sm d-inline">
+                        @if ($errors->has('product_name'))
+                            <div class="row justify-content-center">
+                                <div class="cal-xs-4">
+                                    <span style="color:red">{{ $errors->first('product_name') }}</span>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
                 </div>
               </td>
             </tr>
@@ -33,8 +39,7 @@
                   <label for="product-company">メーカー名</label>
               </td>
               <td>
-                  <input type="text">
-                    <select class="form-select" id="company_id" name="company_id">
+                    <input class="form-select" id="company_id" name="company_name">
                       @foreach ($companies as $company)
                       <option value="{{ $company->id }}">{{ $company->name }}</option>
                       @endforeach
@@ -111,9 +116,8 @@
                 </button>
               </td>
             </tr>
-        </form>
-      </form>
-    </tbody>
-  </table>
+        </tbody>
+    </table>
+  </form>
 </div>
 @endsection
